@@ -9,9 +9,9 @@ public class LightBoard
    */
  public LightBoard(int numRows, int numCols) {
         lights = new boolean[numRows][numCols];
-        rand = new Random();
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numCols; col++) {
+                double rnd = Math.random();
                 lights[row][col] = rand.nextDouble() < 0.4;
             }
         }
@@ -29,11 +29,13 @@ public class LightBoard
             }
         }
 
-        if (lights[row][col]) {
-            return onCount % 2 == 0;
-        } else {
-            return onCount % 3 == 0;
+        if (lights[row][col] && onCoun t% 2 == 0) {
+            return false;
+        } 
+        if(!lights[row][col] && numOn % 3 == 0 {
+            return true;
         }
+    return lights[row][col];
     }
   public boolean[][] getLights()
   {
