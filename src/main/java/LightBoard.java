@@ -12,7 +12,7 @@ public class LightBoard
         for (int r = 0; r < numRows; r++) {
             for (int c = 0; c < numCols; c++) {
                 double rnd = Math.random();
-                lights[row][col] = rnd < 0.4;
+                lights[r][c] = rnd < 0.4;
             }
         }
     }
@@ -24,7 +24,7 @@ public class LightBoard
   public boolean evaluateLight(int row, int col) {
         int onCount = 0;
         for (int r = 0; r < lights.length; r++) {
-            if (lights[r][col]) {
+            if (lights[r][c]) {
                 onCount++;
             }
         }
